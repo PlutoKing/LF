@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80FE5EC8-D433-45B6-91B6-E0B5A3BDCB31}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>LF.Figure</RootNamespace>
+    <AssemblyName>LF.Figure</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chart\ChartFigure.Plot.cs" />
+    <Compile Include="Chart\ChartFigure.Operating.cs" />
+    <Compile Include="Chart\Axis\Axis.cs" />
+    <Compile Include="Chart\Axis\AxisLabel.cs" />
+    <Compile Include="Chart\Scale\LinearScale.cs" />
+    <Compile Include="Chart\Scale\LogScale.cs" />
+    <Compile Include="Chart\Scale\Scale.cs" />
+    <Compile Include="Chart\Scale\ScrollRange.cs" />
+    <Compile Include="Chart\Scale\ScrollRangeList.cs" />
+    <Compile Include="Chart\TickAndGrid\MajorGrid.cs" />
+    <Compile Include="Chart\TickAndGrid\MajorTick.cs" />
+    <Compile Include="Chart\TickAndGrid\MinorGrid.cs" />
+    <Compile Include="Chart\TickAndGrid\MinorTick.cs" />
+    <Compile Include="Chart\Axis\X2Axis.cs" />
+    <Compile Include="Chart\Axis\XAxis.cs" />
+    <Compile Include="Chart\Axis\Y2Axis.cs" />
+    <Compile Include="Chart\Axis\Y2AxisList.cs" />
+    <Compile Include="Chart\Axis\YAxis.cs" />
+    <Compile Include="Chart\Axis\YAxisList.cs" />
+    <Compile Include="Chart\Common\Chart.cs" />
+    <Compile Include="Chart\Common\ScaleState.cs" />
+    <Compile Include="Chart\Common\ScaleStateList.cs" />
+    <Compile Include="Chart\Common\ZoomState.cs" />
+    <Compile Include="Chart\Common\ZoomStateStack.cs" />
+    <Compile Include="Drawing\Border.cs" />
+    <Compile Include="Chart\ChartFigure.cs" />
+    <Compile Include="Drawing\Figure.cs" />
+    <Compile Include="FigureControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FigureControl.Designer.cs">
+      <DependentUpon>FigureControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drawing\FontSpec.cs" />
+    <Compile Include="Drawing\Label.cs" />
+    <Compile Include="Drawing\Margin.cs" />
+    <Compile Include="ObjectModel\ObservableCollection.cs" />
+    <Compile Include="ObjectModel\ObservableCollectionThreadSafe.cs" />
+    <Compile Include="Object\Data.cs" />
+    <Compile Include="Object\DataList.cs" />
+    <Compile Include="Object\DroneItem.cs" />
+    <Compile Include="Object\IItem.cs" />
+    <Compile Include="Data\IPointList.cs" />
+    <Compile Include="Data\IPointListEdit.cs" />
+    <Compile Include="Data\PointPair.cs" />
+    <Compile Include="Data\PointPair4.cs" />
+    <Compile Include="Data\PointPairBase.cs" />
+    <Compile Include="Data\PointPairList.cs" />
+    <Compile Include="Object\ImageItem.cs" />
+    <Compile Include="Object\LineItem.cs" />
+    <Compile Include="Object\MarkerItem.cs" />
+    <Compile Include="Object\Overlay.cs" />
+    <Compile Include="Object\PolygonItem.cs" />
+    <Compile Include="Object\Symbol.cs" />
+    <Compile Include="Object\TaskItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LF.Mathematics\LF.Mathematics.csproj">
+      <Project>{1c32bed7-dbd5-4f88-a2be-f181bc263675}</Project>
+      <Name>LF.Mathematics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Special\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

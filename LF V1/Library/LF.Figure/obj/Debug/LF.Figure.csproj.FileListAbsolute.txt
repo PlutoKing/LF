@@ -1,0 +1,20 @@
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\bin\Debug\LF.Figure.dll
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\bin\Debug\LF.Figure.pdb
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\obj\Debug\LF.Figure.Properties.Resources.resources
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\obj\Debug\LF.Figure.csproj.GenerateResource.cache
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\obj\Debug\LF.Figure.dll
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\obj\Debug\LF.Figure.pdb
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\obj\Debug\LF.Figure.csprojAssemblyReference.cache
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\bin\Debug\LF.Mathematics.dll
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\bin\Debug\LF.Mathematics.pdb
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Figure\obj\Debug\LF.Figure.csproj.CopyComplete
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\bin\Debug\LF.Figure.dll
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\bin\Debug\LF.Figure.pdb
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\bin\Debug\LF.Mathematics.dll
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\bin\Debug\LF.Mathematics.pdb
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\obj\Debug\LF.Figure.csprojAssemblyReference.cache
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\obj\Debug\LF.Figure.Properties.Resources.resources
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\obj\Debug\LF.Figure.csproj.GenerateResource.cache
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\obj\Debug\LF.Figure.csproj.CopyComplete
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\obj\Debug\LF.Figure.dll
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Figure\obj\Debug\LF.Figure.pdb

@@ -1,0 +1,10 @@
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Mathematics\bin\Debug\LF.Mathematics.dll
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Mathematics\bin\Debug\LF.Mathematics.pdb
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Mathematics\obj\Debug\LF.Mathematics.csprojAssemblyReference.cache
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Mathematics\obj\Debug\LF.Mathematics.dll
+F:\Documents\GitHub\WPF\LF\LF.Library\LF.Mathematics\obj\Debug\LF.Mathematics.pdb
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Mathematics\bin\Debug\LF.Mathematics.dll
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Mathematics\bin\Debug\LF.Mathematics.pdb
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Mathematics\obj\Debug\LF.Mathematics.dll
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Mathematics\obj\Debug\LF.Mathematics.pdb
+F:\Documents\GitHub\WPF\LF V1\Library\LF.Mathematics\obj\Debug\LF.Mathematics.csprojAssemblyReference.cache

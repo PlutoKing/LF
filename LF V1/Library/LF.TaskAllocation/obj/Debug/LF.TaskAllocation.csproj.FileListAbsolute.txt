@@ -1,0 +1,8 @@
+F:\Documents\GitHub\WPF\LF V1\Library\LF.TaskAllocation\bin\Debug\LF.TaskAllocation.dll
+F:\Documents\GitHub\WPF\LF V1\Library\LF.TaskAllocation\bin\Debug\LF.TaskAllocation.pdb
+F:\Documents\GitHub\WPF\LF V1\Library\LF.TaskAllocation\bin\Debug\LF.Mathematics.dll
+F:\Documents\GitHub\WPF\LF V1\Library\LF.TaskAllocation\bin\Debug\LF.Mathematics.pdb
+F:\Documents\GitHub\WPF\LF V1\Library\LF.TaskAllocation\obj\Debug\LF.TaskAllocation.csprojAssemblyReference.cache
+F:\Documents\GitHub\WPF\LF V1\Library\LF.TaskAllocation\obj\Debug\LF.TaskAllocation.csproj.CopyComplete
+F:\Documents\GitHub\WPF\LF V1\Library\LF.TaskAllocation\obj\Debug\LF.TaskAllocation.dll
+F:\Documents\GitHub\WPF\LF V1\Library\LF.TaskAllocation\obj\Debug\LF.TaskAllocation.pdb

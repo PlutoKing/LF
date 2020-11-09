@@ -1,0 +1,5 @@
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure\bin\Debug\LF.Figure.dll
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure\bin\Debug\LF.Figure.pdb
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure\obj\Debug\LF.Figure.csprojAssemblyReference.cache
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure\obj\Debug\LF.Figure.dll
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure\obj\Debug\LF.Figure.pdb

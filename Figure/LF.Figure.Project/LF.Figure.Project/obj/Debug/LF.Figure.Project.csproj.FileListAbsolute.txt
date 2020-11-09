@@ -1,0 +1,17 @@
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\bin\Debug\LF.Figure.Project.exe.config
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\bin\Debug\LF.Figure.Project.exe
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\bin\Debug\LF.Figure.Project.pdb
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\LF.Figure.Project.csprojAssemblyReference.cache
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\MainWindow.g.cs
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\App.g.cs
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\LF.Figure.Project_MarkupCompile.cache
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\LF.Figure.Project_MarkupCompile.lref
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\MainWindow.baml
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\LF.Figure.Project.g.resources
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\LF.Figure.Project.Properties.Resources.resources
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\LF.Figure.Project.csproj.GenerateResource.cache
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\LF.Figure.Project.exe
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\LF.Figure.Project.pdb
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\bin\Debug\LF.Figure.dll
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\bin\Debug\LF.Figure.pdb
+F:\Documents\GitHub\WPF\Figure\LF.Figure.Project\LF.Figure.Project\obj\Debug\LF.Figure.Project.csproj.CopyComplete
