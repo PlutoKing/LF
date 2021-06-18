@@ -1,0 +1,6 @@
+I:\DesktopApplication\LF\Libraries\Academics\LF.AircraftDesign\bin\Debug\LF.AircraftDesign.dll
+I:\DesktopApplication\LF\Libraries\Academics\LF.AircraftDesign\bin\Debug\LF.AircraftDesign.pdb
+I:\DesktopApplication\LF\Libraries\Academics\LF.AircraftDesign\obj\Debug\LF.AircraftDesign.csprojAssemblyReference.cache
+I:\DesktopApplication\LF\Libraries\Academics\LF.AircraftDesign\obj\Debug\LF.AircraftDesign.csproj.CoreCompileInputs.cache
+I:\DesktopApplication\LF\Libraries\Academics\LF.AircraftDesign\obj\Debug\LF.AircraftDesign.dll
+I:\DesktopApplication\LF\Libraries\Academics\LF.AircraftDesign\obj\Debug\LF.AircraftDesign.pdb

@@ -1,0 +1,42 @@
+﻿<Window x:Class="LF.AircraftDesign.Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LF.AircraftDesign.Project"
+        xmlns:pages="clr-namespace:LF.AircraftDesign.Project.Pages"
+        mc:Ignorable="d" UseLayoutRounding="True"
+        Title="飞行器设计"
+        Height="450" Width="800" MinHeight="450" MinWidth="800"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
+        <Menu Padding="4" Background="white" BorderThickness="0 0 0 1" BorderBrush="{StaticResource LineColor}">
+            <MenuItem Header="文件(F)"></MenuItem>
+            <MenuItem Header="工具(T)"></MenuItem>
+        </Menu>
+        <TabControl Grid.Row="2" BorderThickness="0 1 0 1" Style="{StaticResource LeftTabControl}" ItemContainerStyle="{StaticResource LeftTabItem}">
+            <TabItem Header="任务规范">
+                <pages:MissionSpecificationPage/>
+            </TabItem>
+            <TabItem Header="气动布局">
+                <pages:AerodynamicConfigurationPage/>
+            </TabItem>
+            <TabItem Header="总体参数"></TabItem>
+            <TabItem Header="外形设计">
+                <pages:GeometryDesignPage/>
+            </TabItem>
+            <TabItem Header="系统布置"></TabItem>
+            <TabItem Header="气动特性"></TabItem>
+            <TabItem Header="飞行性能"></TabItem>
+            <TabItem Header="结构布局"></TabItem>
+            <TabItem Header="重量中心"></TabItem>
+            <TabItem Header="操稳特性"></TabItem>
+        </TabControl>
+    </Grid>
+</Window>

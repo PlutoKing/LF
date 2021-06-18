@@ -1,0 +1,17 @@
+﻿<Application x:Class="LF.GCS.Project.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LF.GCS.Project"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/LF.Controls;component/Styles/Color.xaml" />
+                <ResourceDictionary Source="/LF.Controls;component/Styles/Button.xaml" />
+                <ResourceDictionary Source="/LF.Controls;component/Styles/ComboBox.xaml" />
+                <ResourceDictionary Source="/LF.Controls;component/Styles/GroupBox.xaml" />
+                <ResourceDictionary Source="/LF.Controls;component/Styles/TabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

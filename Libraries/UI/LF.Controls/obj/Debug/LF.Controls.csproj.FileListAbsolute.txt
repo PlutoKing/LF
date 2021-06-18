@@ -1,0 +1,17 @@
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\bin\Debug\LF.Controls.dll
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\bin\Debug\LF.Controls.pdb
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\Styles\Button.baml
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\Styles\CheckBox.baml
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\Styles\Color.baml
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\Styles\ComboBox.baml
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\Styles\GroupBox.baml
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\Styles\TabControl.baml
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\LF.Controls_MarkupCompile.cache
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\LF.Controls_MarkupCompile.lref
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\Themes\Generic.baml
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\LF.Controls.g.resources
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\LF.Controls.Properties.Resources.resources
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\LF.Controls.csproj.GenerateResource.cache
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\LF.Controls.csproj.CoreCompileInputs.cache
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\LF.Controls.dll
+I:\DesktopApplication\LF\Libraries\UI\LF.Controls\obj\Debug\LF.Controls.pdb

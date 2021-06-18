@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="LF.GCS.Project.Pages.ConfigPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LF.GCS.Project.Pages"
+             xmlns:controls="clr-namespace:LF.GCS.Project.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <TabControl Style="{StaticResource LeftTabControl}" ItemContainerStyle="{StaticResource LeftTabItem}" BorderThickness="0">
+            <TabItem Header="引导"></TabItem>
+            <TabItem Header="加速度计校准" Width="100"></TabItem>
+            <TabItem Header="陀螺仪校准" Width="100"></TabItem>
+            <TabItem Header="磁强计校准" Width="100"></TabItem>
+            <TabItem Header="遥控器校准" Width="100">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="0 0 0 1" BorderBrush="{StaticResource LineColor}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="0" Margin="8 0 8 0">
+                                <Button Content="开始校准" Margin="4"></Button>
+                                <Button Content="上传参数" Margin="4"></Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <GroupBox Header="遥控器输入信号" Grid.Row="1" Margin="8" MaxWidth="600" MaxHeight="500" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Grid Margin="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="AUTO" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="AUTO" />
+                                </Grid.RowDefinitions>
+                                <controls:ScaleBarH></controls:ScaleBarH>
+                                <Grid Grid.Row="1" Margin="4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <controls:ScaleBarV Margin="4"></controls:ScaleBarV>
+                                    <controls:ScaleBarV Grid.Column="1" Margin="4"></controls:ScaleBarV>
+                                </Grid>
+                                <controls:ScaleBarH Grid.Row="4"></controls:ScaleBarH>
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="58" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="58" />
+                                </Grid.RowDefinitions>
+                                <controls:ScaleBarH Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></controls:ScaleBarH>
+                                <controls:ScaleBarH Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"></controls:ScaleBarH>
+                                <controls:ScaleBarH Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"></controls:ScaleBarH>
+                                <controls:ScaleBarH Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"></controls:ScaleBarH>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

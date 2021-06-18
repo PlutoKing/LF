@@ -1,5 +1,0 @@
-F:\Documents\GitHub\WPF\LF V1\Library\LF.WhisperLink\bin\Debug\LF.WhisperLink.dll
-F:\Documents\GitHub\WPF\LF V1\Library\LF.WhisperLink\bin\Debug\LF.WhisperLink.pdb
-F:\Documents\GitHub\WPF\LF V1\Library\LF.WhisperLink\obj\Debug\LF.WhisperLink.csprojAssemblyReference.cache
-F:\Documents\GitHub\WPF\LF V1\Library\LF.WhisperLink\obj\Debug\LF.WhisperLink.dll
-F:\Documents\GitHub\WPF\LF V1\Library\LF.WhisperLink\obj\Debug\LF.WhisperLink.pdb

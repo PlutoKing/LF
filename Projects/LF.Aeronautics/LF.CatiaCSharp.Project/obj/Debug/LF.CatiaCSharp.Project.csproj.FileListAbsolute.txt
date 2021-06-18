@@ -1,0 +1,15 @@
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\bin\Debug\LF.CatiaCSharp.Project.exe.config
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\bin\Debug\LF.CatiaCSharp.Project.exe
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\bin\Debug\LF.CatiaCSharp.Project.pdb
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\LF.CatiaCSharp.Project.csprojAssemblyReference.cache
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\MainWindow.g.cs
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\App.g.cs
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\LF.CatiaCSharp.Project_MarkupCompile.cache
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\LF.CatiaCSharp.Project_MarkupCompile.lref
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\MainWindow.baml
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\LF.CatiaCSharp.Project.g.resources
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\LF.CatiaCSharp.Project.Properties.Resources.resources
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\LF.CatiaCSharp.Project.csproj.GenerateResource.cache
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\LF.CatiaCSharp.Project.csproj.CoreCompileInputs.cache
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\LF.CatiaCSharp.Project.exe
+I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.CatiaCSharp.Project\obj\Debug\LF.CatiaCSharp.Project.pdb
