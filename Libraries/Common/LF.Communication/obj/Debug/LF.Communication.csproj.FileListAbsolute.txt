@@ -1,0 +1,6 @@
+I:\LF.Lab\Libraries\Common\LF.Communication\bin\Debug\LF.Communication.dll
+I:\LF.Lab\Libraries\Common\LF.Communication\bin\Debug\LF.Communication.pdb
+I:\LF.Lab\Libraries\Common\LF.Communication\obj\Debug\LF.Communication.csprojAssemblyReference.cache
+I:\LF.Lab\Libraries\Common\LF.Communication\obj\Debug\LF.Communication.csproj.CoreCompileInputs.cache
+I:\LF.Lab\Libraries\Common\LF.Communication\obj\Debug\LF.Communication.dll
+I:\LF.Lab\Libraries\Common\LF.Communication\obj\Debug\LF.Communication.pdb

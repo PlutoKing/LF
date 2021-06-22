@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{19ED008F-F5EA-480A-85D2-336EBCD2EB0A}</ProjectGuid>
+    <ProjectGuid>{3371781C-A509-4D21-A2C9-0D3C72340F91}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>LF.AircraftDesign.Project</RootNamespace>
     <AssemblyName>LF.AircraftDesign.Project</AssemblyName>
@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,22 +60,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\AtmosphereToolWindowModel.cs" />
+    <Compile Include="ViewModel\CreateProjectDialogModel.cs" />
+    <Compile Include="ViewModel\MainWindowModel.cs" />
+    <Compile Include="ViewModel\SizingPageModel.cs" />
+    <Compile Include="View\Window\FuelFractionInCruiseWindow.xaml.cs">
+      <DependentUpon>FuelFractionInCruiseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Page\SizingPage.xaml.cs">
+      <DependentUpon>SizingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Window\AtmosphereToolWindow.xaml.cs">
+      <DependentUpon>AtmosphereToolWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\CreateProjectDialog.xaml.cs">
+      <DependentUpon>CreateProjectDialog.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AerodynamicConfigurationPage.xaml.cs">
-      <DependentUpon>AerodynamicConfigurationPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\GeometryDesignPage.xaml.cs">
-      <DependentUpon>GeometryDesignPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MissionSpecificationPage.xaml.cs">
-      <DependentUpon>MissionSpecificationPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\WingPage.xaml.cs">
-      <DependentUpon>WingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -102,35 +107,41 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Libraries\UI\LF.Controls\LF.Controls.csproj">
-      <Project>{993cdd3e-b574-40e9-8f73-7ab99ff9f0b9}</Project>
-      <Name>LF.Controls</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AerodynamicConfigurationPage.xaml">
+    <Page Include="View\Window\FuelFractionInCruiseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\GeometryDesignPage.xaml">
+    <Page Include="View\Page\SizingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\MissionSpecificationPage.xaml">
+    <Page Include="View\Window\AtmosphereToolWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WingPage.xaml">
+    <Page Include="View\Dialog\CreateProjectDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Config\" />
+    <ProjectReference Include="..\..\..\Libraries\Academics\LF.AircraftDesign\LF.AircraftDesign.csproj">
+      <Project>{984e3afc-518c-4466-8ce3-9587cd2e7bc9}</Project>
+      <Name>LF.AircraftDesign</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Common\LF\LF.csproj">
+      <Project>{e2af2210-1713-4d1a-bb15-bd5f797265a6}</Project>
+      <Name>LF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\UI\LF.WPFControl\LF.WPFControl.csproj">
+      <Project>{21f70d39-5b21-468c-ad20-fe624fec6ae3}</Project>
+      <Name>LF.WPFControl</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

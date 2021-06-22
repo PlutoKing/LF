@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F6210760-5757-41EF-A85F-C0BA3B63C5D7}</ProjectGuid>
+    <ProjectGuid>{984E3AFC-518C-4466-8CE3-9587CD2E7BC9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LF.AircraftDesign</RootNamespace>
@@ -41,18 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LFGlobal.cs" />
-    <Compile Include="LFWeight.cs" />
+    <Compile Include="LFAtmosphere.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\LF\LF.csproj">
-      <Project>{9feda7e4-f210-4864-9b05-5f93086b926e}</Project>
+      <Project>{e2af2210-1713-4d1a-bb15-bd5f797265a6}</Project>
       <Name>LF</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

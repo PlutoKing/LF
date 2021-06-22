@@ -1,0 +1,6 @@
+I:\LF.Lab\Libraries\Common\LF\bin\Debug\LF.dll
+I:\LF.Lab\Libraries\Common\LF\bin\Debug\LF.pdb
+I:\LF.Lab\Libraries\Common\LF\obj\Debug\LF.csproj.CoreCompileInputs.cache
+I:\LF.Lab\Libraries\Common\LF\obj\Debug\LF.dll
+I:\LF.Lab\Libraries\Common\LF\obj\Debug\LF.pdb
+I:\LF.Lab\Libraries\Common\LF\obj\Debug\LF.csprojAssemblyReference.cache

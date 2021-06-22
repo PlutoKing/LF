@@ -1,0 +1,86 @@
+﻿<Window x:Class="LF.LinkAssistant.Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LF.LinkAssistant.Project"
+        mc:Ignorable="d" Name="window" UseLayoutRounding="True"
+        Title="MainWindow" Height="450" Width="800" Background="{StaticResource BackColor}"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="打包过程" Margin="3">
+            <StackPanel>
+                <GroupBox Header="Float -> Byte[2]" Margin="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="输入：" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="0" Grid.Column="1" Margin="3" Grid.ColumnSpan="2" Text="{Binding F1}"></TextBox>
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="比例：" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="3" Grid.ColumnSpan="2" Text="{Binding Scale11}"></TextBox>
+                        <Button Grid.Row="1" Grid.Column="3" Content="计算" Margin="3" Width="60"
+                                Command="{Binding CalculateFloatToByte2}" CommandParameter="window"></Button>
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="内存：" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="2" Grid.Column="1" Margin="3" Grid.ColumnSpan="2" Text="{Binding InputF1Memory}"></TextBox>
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="输出：" Margin="3"></TextBlock>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="[0]" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="3" Grid.Column="2" Margin="3" Text="{Binding OutputB1}"></TextBox>
+                        <TextBlock Grid.Row="4" Grid.Column="1" Text="[1]" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="4" Grid.Column="2" Margin="3" Text="{Binding OutputB2}"></TextBox>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="解包过程" Grid.Column="1" Margin="3">
+            <StackPanel>
+                <GroupBox Header="Byte[2] -> Float" Margin="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="输入：" Margin="3"></TextBlock>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="[0]" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="0" Grid.Column="2" Margin="3" Text="{Binding B11}"></TextBox>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="[1]" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="1" Grid.Column="2" Margin="3" Text="{Binding B12}"></TextBox>
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="比例：" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="2" Grid.Column="1" Margin="3" Grid.ColumnSpan="2" Text="{Binding Scale21}"></TextBox>
+                        <Button Grid.Row="2" Grid.Column="3" Content="计算" Margin="3" Width="60"
+                                Command="{Binding CalculateByte2ToFloat}" CommandParameter="window"></Button>
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="数值：" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="3" Grid.Column="1" Margin="3" Grid.ColumnSpan="2" Text="{Binding OutputF1Raw}"></TextBox>
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="输出：" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="4" Grid.Column="1" Margin="3" Grid.ColumnSpan="2" Text="{Binding OutputF1}"></TextBox>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+
+        </GroupBox>
+    </Grid>
+
+</Window>

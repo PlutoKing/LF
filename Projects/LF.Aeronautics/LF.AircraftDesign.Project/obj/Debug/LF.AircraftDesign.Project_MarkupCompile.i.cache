@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.AircraftDesign.Project\obj\Debug\
+I:\LF.Lab\Projects\LF.Aeronautics\LF.AircraftDesign.Project\obj\Debug\
 LF.AircraftDesign.Project
 none
 false
 DEBUG;TRACE
-I:\DesktopApplication\LF\Projects\LF.Aeronautics\LF.AircraftDesign.Project\App.xaml
-5-80765032
+I:\LF.Lab\Projects\LF.Aeronautics\LF.AircraftDesign.Project\App.xaml
+5-1240826441
 
-10-874188686
-14-2126364195
-MainWindow.xaml;Pages\AerodynamicConfigurationPage.xaml;Pages\GeometryDesignPage.xaml;Pages\MissionSpecificationPage.xaml;Pages\WingPage.xaml;
+141903839418
+17-1062665214
+MainWindow.xaml;View\Window\FuelFractionInCruiseWindow.xaml;View\Page\SizingPage.xaml;View\Window\AtmosphereToolWindow.xaml;View\Dialog\CreateProjectDialog.xaml;
 
-True
+False
 

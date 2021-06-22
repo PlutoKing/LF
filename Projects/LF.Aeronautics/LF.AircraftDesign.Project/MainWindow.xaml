@@ -4,39 +4,42 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LF.AircraftDesign.Project"
-        xmlns:pages="clr-namespace:LF.AircraftDesign.Project.Pages"
-        mc:Ignorable="d" UseLayoutRounding="True"
-        Title="飞行器设计"
-        Height="450" Width="800" MinHeight="450" MinWidth="800"
+        xmlns:view="clr-namespace:LF.AircraftDesign.Project.View"
+        mc:Ignorable="d" Name="window" UseLayoutRounding="True"
+        Title="飞行器设计" Height="450" Width="800" Background="{StaticResource BackColor}"
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25" />
-            <RowDefinition Height="24" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="24" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Menu Padding="4" Background="white" BorderThickness="0 0 0 1" BorderBrush="{StaticResource LineColor}">
-            <MenuItem Header="文件(F)"></MenuItem>
-            <MenuItem Header="工具(T)"></MenuItem>
+        <Menu Padding="4" Background="White" BorderBrush="{StaticResource LineColor}" BorderThickness="0 0 0 1">
+            <MenuItem Header="文件">
+                <MenuItem Header="新建项目" Command="{Binding CreateProjectCmd}" CommandParameter="{Binding ElementName=window}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="工具">
+                <MenuItem Header="大气参数工具" Command="{Binding AtmosphereToolCmd}" CommandParameter="{Binding ElementName=window}"></MenuItem>
+            </MenuItem>
         </Menu>
-        <TabControl Grid.Row="2" BorderThickness="0 1 0 1" Style="{StaticResource LeftTabControl}" ItemContainerStyle="{StaticResource LeftTabItem}">
-            <TabItem Header="任务规范">
-                <pages:MissionSpecificationPage/>
+        <TabControl Grid.Row="2" BorderThickness="0"
+                    Style="{DynamicResource LeftTabControl}" ItemContainerStyle="{StaticResource LeftTabItem}">
+            <TabItem Header="任务规范"></TabItem>
+            <TabItem Header="布局形式" ></TabItem>
+            <TabItem Header="初步设计">
+                <view:SizingPage/>
             </TabItem>
-            <TabItem Header="气动布局">
-                <pages:AerodynamicConfigurationPage/>
-            </TabItem>
-            <TabItem Header="总体参数"></TabItem>
-            <TabItem Header="外形设计">
-                <pages:GeometryDesignPage/>
-            </TabItem>
-            <TabItem Header="系统布置"></TabItem>
+            <TabItem Header="外形设计"></TabItem>
             <TabItem Header="气动特性"></TabItem>
             <TabItem Header="飞行性能"></TabItem>
-            <TabItem Header="结构布局"></TabItem>
-            <TabItem Header="重量中心"></TabItem>
-            <TabItem Header="操稳特性"></TabItem>
         </TabControl>
+        <Border Grid.Row="3" BorderThickness="0 1 0 0" BorderBrush="{StaticResource LineColor}" Background="White">
+            <StackPanel Margin="3">
+                <TextBlock Margin="3"></TextBlock>
+
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Window>

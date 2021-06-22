@@ -1,5 +1,0 @@
-I:\DesktopApplication\LF\Libraries\Common\LF.SerialCommunication\bin\Debug\LF.SerialCommunication.dll
-I:\DesktopApplication\LF\Libraries\Common\LF.SerialCommunication\bin\Debug\LF.SerialCommunication.pdb
-I:\DesktopApplication\LF\Libraries\Common\LF.SerialCommunication\obj\Debug\LF.SerialCommunication.csproj.CoreCompileInputs.cache
-I:\DesktopApplication\LF\Libraries\Common\LF.SerialCommunication\obj\Debug\LF.SerialCommunication.dll
-I:\DesktopApplication\LF\Libraries\Common\LF.SerialCommunication\obj\Debug\LF.SerialCommunication.pdb

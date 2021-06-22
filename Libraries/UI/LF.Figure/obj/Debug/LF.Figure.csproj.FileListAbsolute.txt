@@ -1,0 +1,14 @@
+I:\LF.Lab\Libraries\UI\LF.Figure\bin\Debug\LF.Figure.dll
+I:\LF.Lab\Libraries\UI\LF.Figure\bin\Debug\LF.Figure.pdb
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LF.Figure.csprojAssemblyReference.cache
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LFFigureView.g.cs
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LF.Figure_MarkupCompile.cache
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LF.Figure_MarkupCompile.lref
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LFFigureView.baml
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LF.Figure.g.resources
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LF.Figure.csproj.CoreCompileInputs.cache
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LF.Figure.dll
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LF.Figure.pdb
+I:\LF.Lab\Libraries\UI\LF.Figure\bin\Debug\LF.dll
+I:\LF.Lab\Libraries\UI\LF.Figure\bin\Debug\LF.pdb
+I:\LF.Lab\Libraries\UI\LF.Figure\obj\Debug\LF.Figure.csproj.CopyComplete

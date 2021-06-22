@@ -6,11 +6,16 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/LF.Controls;component/Styles/Color.xaml" />
-                <ResourceDictionary Source="/LF.Controls;component/Styles/Button.xaml" />
-                <ResourceDictionary Source="/LF.Controls;component/Styles/ComboBox.xaml" />
-                <ResourceDictionary Source="/LF.Controls;component/Styles/GroupBox.xaml" />
-                <ResourceDictionary Source="/LF.Controls;component/Styles/TabControl.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/Color.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/Button.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/CheckBox.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/ComboBox.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/DataGrid.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/Expander.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/GroupBox.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/TabControl.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/TextBlock.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/TextBox.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

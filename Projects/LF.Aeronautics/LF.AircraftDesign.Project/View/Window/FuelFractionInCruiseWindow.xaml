@@ -1,0 +1,67 @@
+﻿<Window x:Class="LF.AircraftDesign.Project.View.FuelFractionInCruiseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LF.AircraftDesign.Project.View"
+        mc:Ignorable="d" Name="window" UseLayoutRounding="True"
+        Title="巡航阶段任务燃油分数" Height="450" Width="400" Background="Transparent" AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Background="{StaticResource BackColor}">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray" ShadowDepth="0" BlurRadius="6" Opacity="0.3" Direction="0"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border Name="Top" BorderThickness="0 0 0 1" BorderBrush="{StaticResource LineColor}" Background="White"
+                    MouseLeftButtonDown="Top_MouseLeftButtonDown">
+                <TextBlock Text="{Binding ElementName=window,Path=Title}" Margin="8" Foreground="{StaticResource MainColor}"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            </Border>
+            <Border Grid.Row="1" Margin="6" BorderThickness="1" BorderBrush="{StaticResource LineColor}" Background="White">
+                <Grid Margin="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="航程" Margin="3"></TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="R" Margin="3"></TextBlock>
+                    <TextBox Grid.Row="0" Grid.Column="2" Margin="3"></TextBox>
+                    <TextBlock Grid.Row="0" Grid.Column="3" Text="km" Margin="3"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="速度" Margin="3"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="V" Margin="3"></TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="2" Margin="3"></TextBox>
+                    <TextBlock Grid.Row="1" Grid.Column="3" Text="km/s" Margin="3"></TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="额定耗油率" Margin="3"></TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="cj" Margin="3"></TextBlock>
+                    <TextBox Grid.Row="2" Grid.Column="2" Margin="3"></TextBox>
+                    <TextBlock Grid.Row="2" Grid.Column="3" Text="km/s" Margin="3"></TextBlock>
+                </Grid>
+            </Border>
+            <Border Grid.Row="2" BorderThickness="0 1 0 0" BorderBrush="{StaticResource LineColor}" Background="White">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="3">
+                    <TextBlock Text="{Binding ErrorMessage}" Margin="6" Foreground="Red"></TextBlock>
+                    <Button Grid.Row="0" Grid.Column="4" Content="计算" Margin="3" Width="60"
+                                Command="{Binding CalculateCmd}" CommandParameter="{Binding ElementName=window}"></Button>
+                    <Button Grid.Row="0" Grid.Column="4" Content="关闭" Margin="3" Width="60" Style="{StaticResource SingleButton}"
+                                Command="{Binding CloseWindowCmd}" CommandParameter="{Binding ElementName=window}"></Button>
+                </StackPanel>
+
+            </Border>
+        </Grid>
+    </Border>
+
+</Window>

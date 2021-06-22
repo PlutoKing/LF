@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="LF.AircraftDesign.Project.View.SizingPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LF.AircraftDesign.Project.View"
+             mc:Ignorable="d" x:Name="page"
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <Grid Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Expander Margin="3" Header="载荷重量">
+                <Grid Margin="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="乘客重量" Margin="3"></TextBlock>
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="3"></TextBox>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="kg" Margin="3"></TextBlock>
+                    <Button Grid.Row="0" Grid.Column="3" Margin="3" Content="计算" Width="60" Style="{StaticResource SingleButton}"></Button>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="行李重量" Margin="3"></TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="3"></TextBox>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="kg" Margin="3"></TextBlock>
+                    <Button Grid.Row="1" Grid.Column="3" Margin="3" Content="计算" Width="60" Style="{StaticResource SingleButton}"></Button>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="货物重量" Margin="3"></TextBlock>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="3"></TextBox>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="kg" Margin="3"></TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="武器重量" Margin="3"></TextBlock>
+                    <TextBox Grid.Row="3" Grid.Column="1" Margin="3"></TextBox>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Text="kg" Margin="3"></TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="其他重量" Margin="3"></TextBlock>
+                    <TextBox Grid.Row="4" Grid.Column="1" Margin="3"></TextBox>
+                    <TextBlock Grid.Row="4" Grid.Column="2" Text="kg" Margin="3"></TextBlock>
+                    <Rectangle Grid.Row="5" Grid.ColumnSpan="4" Margin="3" Fill="{StaticResource LineColor}" Height="1"></Rectangle>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="载荷重量" Margin="3" Foreground="{StaticResource MainColor}"></TextBlock>
+                    <TextBox Grid.Row="6" Grid.Column="1" Margin="3" IsReadOnly="True"></TextBox>
+                    <TextBlock Grid.Row="6" Grid.Column="2" Text="kg" Margin="3"></TextBlock>
+                    <Button Grid.Row="6" Grid.Column="3" Margin="3" Content="计算" Width="60"></Button>
+                </Grid>
+            </Expander>
+            <Expander Margin="3" Header="燃油重量">
+                <StackPanel Margin="3">
+                    <TextBlock Text="各飞行阶段燃油分数" Margin="3" Foreground="{StaticResource MainColor}"></TextBlock>
+                    <Grid Margin="24 0 0 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="1. 开车、暖机" Margin="3"></TextBlock>
+                        <TextBox Grid.Column="1" Margin="3"></TextBox>
+                        <TextBlock Grid.Row="1" Text="2. 起飞" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="3"></TextBox>
+                        <TextBlock Grid.Row="2" Text="3. 滑跑" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="2" Grid.Column="1" Margin="3"></TextBox>
+                        <TextBlock Grid.Row="3" Text="4. 爬升" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="3" Grid.Column="1" Margin="3"></TextBox>
+                        <Button Grid.Row="3" Grid.Column="2" Margin="3" Content="计算" Width="60" Style="{StaticResource SingleButton}"></Button>
+                        <TextBlock Grid.Row="4" Text="5. 巡航" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="4" Grid.Column="1" Margin="3"></TextBox>
+                        <Button Grid.Row="4" Grid.Column="2" Margin="3" Content="计算" Width="60" Style="{StaticResource SingleButton}"
+                                Command="{Binding GetFuelFractionInCruiseCmd}" CommandParameter="{Binding ElementName=page}"></Button>
+                        <TextBlock Grid.Row="5" Text="6. 待机盘旋" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="5" Grid.Column="1" Margin="3"></TextBox>
+                        <Button Grid.Row="5" Grid.Column="2" Margin="3" Content="计算" Width="60" Style="{StaticResource SingleButton}"></Button>
+                        <TextBlock Grid.Row="6" Text="7. 下降" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="6" Grid.Column="1" Margin="3"></TextBox>
+                        <TextBlock Grid.Row="7" Text="8. 着陆、滑跑、关车" Margin="3"></TextBlock>
+                        <TextBox Grid.Row="7" Grid.Column="1" Margin="3"></TextBox>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="燃油系数" Margin="3" Foreground="{StaticResource MainColor}"></TextBlock>
+                        <TextBox Grid.Column="1" Margin="3"></TextBox>
+                        <Button Grid.Row="5" Grid.Column="2" Margin="3" Content="计算" Width="60"></Button>
+                    </Grid>
+                </StackPanel>
+            </Expander>
+        </StackPanel>
+    </Grid>
+</UserControl>

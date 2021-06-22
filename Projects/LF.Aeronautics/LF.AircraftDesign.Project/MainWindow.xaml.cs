@@ -1,10 +1,11 @@
 ﻿/*──────────────────────────────────────────────────────────────
  * FileName     : MainWindow.cs
- * Created      : 2021-06-11 15:55:27
+ * Created      : 2021-06-22 15:03:47
  * Author       : Xu Zhe
  * Description  : 
  * ──────────────────────────────────────────────────────────────*/
 
+using LF.AircraftDesign.Project.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,8 @@ namespace LF.AircraftDesign.Project
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MainWindowModel();
         }
         #endregion
 

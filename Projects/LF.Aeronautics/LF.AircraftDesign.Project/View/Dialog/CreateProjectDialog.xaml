@@ -1,0 +1,60 @@
+﻿<Window x:Class="LF.AircraftDesign.Project.View.CreateProjectDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LF.AircraftDesign.Project.View"
+        mc:Ignorable="d" Name="window" UseLayoutRounding="True"
+        Title="新建项目" Height="226" Width="400" Background="Transparent" AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Background="{StaticResource BackColor}">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray" ShadowDepth="0" BlurRadius="6" Opacity="0.3" Direction="0"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border Name="Top" BorderThickness="0 0 0 1" BorderBrush="{StaticResource LineColor}" Background="White"
+                    MouseLeftButtonDown="Top_MouseLeftButtonDown">
+                <TextBlock Text="{Binding ElementName=window,Path=Title}" Margin="8" Foreground="{StaticResource MainColor}"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            </Border>
+            <Border Grid.Row="1" Margin="8" Background="White" BorderThickness="1" BorderBrush="{StaticResource LineColor}">
+                <Grid Margin="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="项目名称" Margin="4"/>
+                    <TextBox Grid.Row="1" Text="{Binding ProjectName}" Margin="4" Height="24" VerticalContentAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Text="项目路径" Margin="4"/>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox Margin="4" Height="24" VerticalContentAlignment="Center"
+                                 Text="{Binding ProjectPath}"/>
+                        <Button Content="浏览" Grid.Column="1" Margin="4" Width="60"
+                                Command="{Binding ChoosePathCmd}" CommandParameter="{Binding ElementName=window}"></Button>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="2" BorderThickness="0 1 0 0" BorderBrush="{StaticResource LineColor}" Background="White">
+                <StackPanel Margin="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="取消" Margin="4" Width="60" Style="{StaticResource SingleButton}"
+                            Command="{Binding CloseWindowCmd}" CommandParameter="{Binding ElementName=window}"/>
+                    <Button Content="确定" Margin="4" Width="60"
+                            Command="{Binding CreateProjectCmd}" CommandParameter="{Binding ElementName=window}"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
