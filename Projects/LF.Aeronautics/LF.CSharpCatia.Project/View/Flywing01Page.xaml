@@ -1,0 +1,92 @@
+﻿<UserControl
+    x:Class="LF.CSharpCatia.Project.View.Flywing01Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:LF.CSharpCatia.Project.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button
+                    Width="60"
+                    Margin="3"
+                    Content="绘制" />
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <GroupBox
+                    Margin="3"
+                    Background="White"
+                    Header="参数">
+                    <Grid Margin="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="3"
+                            Text="展长" />
+                        <TextBox Grid.Row="0" Grid.Column="1" />
+                    </Grid>
+                </GroupBox>
+
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <GroupBox
+                Margin="3"
+                Background="White"
+                Header="主视图" />
+            <GroupBox
+                Grid.Column="1"
+                Margin="3"
+                Background="White"
+                Header="左视图" />
+            <GroupBox
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="3"
+                Background="White"
+                Header="俯视图" />
+            <GroupBox
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="3"
+                Background="White"
+                Header="预览图">
+                <Border Grid.Row="1" Margin="6">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../Assets/Images/飞翼.jpg" Stretch="Uniform" />
+                    </Border.Background>
+                </Border>
+
+            </GroupBox>
+
+        </Grid>
+    </Grid>
+</UserControl>

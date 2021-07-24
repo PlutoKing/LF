@@ -1,0 +1,31 @@
+﻿<Window
+    x:Class="LF.CSharpCatia.Project.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:LF.CSharpCatia.Project"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:LF.CSharpCatia.Project.View"
+    Name="window"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    UseLayoutRounding="True"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <TabControl
+            Grid.Row="1"
+            ItemContainerStyle="{StaticResource LeftTabItem}"
+            Style="{StaticResource LeftTabControl}">
+            <TabItem Width="120" Header="飞翼01型无人机">
+                <view:Flywing01Page />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

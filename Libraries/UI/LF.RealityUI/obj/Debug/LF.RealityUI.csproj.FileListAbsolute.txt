@@ -1,0 +1,13 @@
+I:\LF.Lab\Libraries\UI\LF.RealityUI\bin\Debug\LF.RealityUI.dll
+I:\LF.Lab\Libraries\UI\LF.RealityUI\bin\Debug\LF.RealityUI.pdb
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\BedButton.g.cs
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\LF.RealityUI_MarkupCompile.cache
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\LF.RealityUI_MarkupCompile.lref
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\BedButton.baml
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\LF.RealityUI.g.resources
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\LF.RealityUI.Properties.Resources.resources
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\LF.RealityUI.csproj.GenerateResource.cache
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\LF.RealityUI.csproj.CoreCompileInputs.cache
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\LF.RealityUI.dll
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\LF.RealityUI.pdb
+I:\LF.Lab\Libraries\UI\LF.RealityUI\obj\Debug\LF.RealityUI.csprojAssemblyReference.cache

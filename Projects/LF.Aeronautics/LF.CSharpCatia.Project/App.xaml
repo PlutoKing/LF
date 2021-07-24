@@ -1,0 +1,23 @@
+﻿<Application
+    x:Class="LF.CSharpCatia.Project.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:LF.CSharpCatia.Project"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/Color.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/Button.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/CheckBox.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/ComboBox.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/DataGrid.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/Expander.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/GroupBox.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/TabControl.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/TextBlock.xaml" />
+                <ResourceDictionary Source="/LF.WPFControl;component/Styles/TextBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,32 @@
+﻿<UserControl
+    x:Class="LF.RealityUI.BedButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:LF.RealityUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="108"
+    Height="172"
+    mc:Ignorable="d">
+    <Border
+        Margin="4"
+        Background="White"
+        BorderBrush="Gray"
+        BorderThickness="2"
+        CornerRadius="4">
+        <Border.Effect>
+            <DropShadowEffect
+                BlurRadius="6"
+                Direction="0"
+                Opacity="0.3"
+                ShadowDepth="0"
+                Color="Gray" />
+        </Border.Effect>
+        <TextBlock
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="14"
+            Text="床" />
+
+    </Border>
+</UserControl>

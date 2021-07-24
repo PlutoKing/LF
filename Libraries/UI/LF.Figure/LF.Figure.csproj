@@ -45,6 +45,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\LFLabel.cs" />
+    <Compile Include="Chart\LFChart.cs" />
     <Compile Include="LFFigureView.xaml.cs">
       <DependentUpon>LFFigureView.xaml</DependentUpon>
     </Compile>
@@ -61,6 +63,9 @@
       <Project>{e2af2210-1713-4d1a-bb15-bd5f797265a6}</Project>
       <Name>LF</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

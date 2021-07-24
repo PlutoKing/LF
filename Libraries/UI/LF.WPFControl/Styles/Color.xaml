@@ -1,11 +1,10 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="MainColor" Color="#486CDD"/>
-    <SolidColorBrush x:Key="MouseOverColor" Color="#7493F7"/>
-    <SolidColorBrush x:Key="MousePressedColor" Color="#415FC4"/>
-    <SolidColorBrush x:Key="InverseColor" Color="White"/>
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="MainColor" Color="#486CDD" />
+    <SolidColorBrush x:Key="MouseOverColor" Color="#7493F7" />
+    <SolidColorBrush x:Key="MousePressedColor" Color="#415FC4" />
+    <SolidColorBrush x:Key="InverseColor" Color="White" />
 
 
-    <SolidColorBrush x:Key="BackColor" Color="#F0F0F0"/>
-    <SolidColorBrush x:Key="LineColor" Color="LightGray"/>
+    <SolidColorBrush x:Key="BackColor" Color="#F0F0F0" />
+    <SolidColorBrush x:Key="LineColor" Color="LightGray" />
 </ResourceDictionary>

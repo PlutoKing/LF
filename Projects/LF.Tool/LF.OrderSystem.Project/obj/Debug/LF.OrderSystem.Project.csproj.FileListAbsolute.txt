@@ -1,0 +1,15 @@
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\bin\Debug\LF.OrderSystem.Project.exe.config
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\bin\Debug\LF.OrderSystem.Project.exe
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\bin\Debug\LF.OrderSystem.Project.pdb
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\LF.OrderSystem.Project.csprojAssemblyReference.cache
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\MainWindow.g.cs
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\App.g.cs
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\LF.OrderSystem.Project_MarkupCompile.cache
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\LF.OrderSystem.Project_MarkupCompile.lref
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\MainWindow.baml
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\LF.OrderSystem.Project.g.resources
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\LF.OrderSystem.Project.Properties.Resources.resources
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\LF.OrderSystem.Project.csproj.GenerateResource.cache
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\LF.OrderSystem.Project.csproj.CoreCompileInputs.cache
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\LF.OrderSystem.Project.exe
+I:\LF.Lab\Projects\LF.Tool\LF.OrderSystem.Project\obj\Debug\LF.OrderSystem.Project.pdb

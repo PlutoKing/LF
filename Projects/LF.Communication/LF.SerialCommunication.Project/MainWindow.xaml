@@ -1,34 +1,47 @@
-﻿<Window x:Class="LF.SerialCommunication.Project.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LF.SerialCommunication.Project"
-        mc:Ignorable="d" Name="window" UseLayoutRounding="True"
-        Title="串口通信助手" Height="600" Width="800" Background="{StaticResource BackColor}"
-        WindowStartupLocation="CenterScreen">
+﻿<Window
+    x:Class="LF.SerialCommunication.Project.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:LF.SerialCommunication.Project"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="window"
+    Title="串口通信助手"
+    Width="800"
+    Height="600"
+    Background="{StaticResource BackColor}"
+    Loaded="MainWindow_Loaded"
+    UseLayoutRounding="True"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
     <Window.Resources>
         <ResourceDictionary>
             <Storyboard x:Key="MenuStoryboard">
-                <DoubleAnimation Duration="0:0:0.2" To="0"
-                                 Storyboard.TargetName="tt" Storyboard.TargetProperty="X"></DoubleAnimation>
+                <DoubleAnimation
+                    Storyboard.TargetName="tt"
+                    Storyboard.TargetProperty="X"
+                    To="0"
+                    Duration="0:0:0.2" />
             </Storyboard>
             <Storyboard x:Key="CloseMenuStoryboard">
-                <DoubleAnimation Duration="0:0:0.1"
-                                 Storyboard.TargetName="tt" Storyboard.TargetProperty="X"></DoubleAnimation>
+                <DoubleAnimation
+                    Storyboard.TargetName="tt"
+                    Storyboard.TargetProperty="X"
+                    Duration="0:0:0.1" />
             </Storyboard>
+            <local:MultiCommandParamterConverter x:Key="multiCommandParamterConverter" />
         </ResourceDictionary>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="Button.Click" SourceName="BtnSetting">
-            <BeginStoryboard Storyboard="{StaticResource MenuStoryboard}"></BeginStoryboard>
+            <BeginStoryboard Storyboard="{StaticResource MenuStoryboard}" />
         </EventTrigger>
         <EventTrigger RoutedEvent="Button.Click" SourceName="BtnCloseMenu">
-            <BeginStoryboard Storyboard="{StaticResource CloseMenuStoryboard}"></BeginStoryboard>
+            <BeginStoryboard Storyboard="{StaticResource CloseMenuStoryboard}" />
         </EventTrigger>
-        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="RightMenu">
-            <BeginStoryboard Storyboard="{StaticResource CloseMenuStoryboard}"></BeginStoryboard>
-        </EventTrigger>
+        <!--<EventTrigger RoutedEvent="Border.MouseLeave" SourceName="RightMenu">
+            <BeginStoryboard Storyboard="{StaticResource CloseMenuStoryboard}" />
+        </EventTrigger>-->
     </Window.Triggers>
     <Grid>
         <Grid.RowDefinitions>
@@ -36,15 +49,46 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="30" />
         </Grid.RowDefinitions>
-        <Border BorderThickness="0 0 0 1" BorderBrush="{StaticResource LineColor}" Background="White">
+        <Border
+            Background="White"
+            BorderBrush="{StaticResource LineColor}"
+            BorderThickness="0,0,0,1">
             <Grid Margin="3">
                 <StackPanel Orientation="Horizontal">
-                    <ComboBox Margin="3" Width="90" ></ComboBox>
-                    <ComboBox Margin="3" Width="90"></ComboBox>
-                    <Button Margin="3" Width="60" Content="打开串口" Command="{Binding OpenOrCloseSerialPortCmd}" CommandParameter="{Binding ElementName=window}"></Button>
+                    <ComboBox
+                        Name="CmbName"
+                        Grid.Column="1"
+                        Width="80"
+                        Margin="3"
+                        IsEditable="True"
+                        SelectionChanged="CmbName_SelectionChanged" />
+                    <ComboBox
+                        Name="CmbBaudrate"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Width="80"
+                        Margin="3"
+                        IsEditable="True"
+                        SelectionChanged="CmbBaudrate_SelectionChanged" />
+                    <Button
+                        x:Name="BtnOpenClose"
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Width="60"
+                        Margin="3"
+                        Click="BtnOpenClose_Click"
+                        Content="打开串口" />
                 </StackPanel>
-                <Button Name="BtnSetting" HorizontalAlignment="Right" Margin="3" Width="60" Content="设置" Style="{StaticResource SingleButton}"
-                        ></Button>
+                <Button
+                    Name="BtnSetting"
+                    Width="24"
+                    Margin="3"
+                    HorizontalAlignment="Right"
+                    Content="&#xe8db;"
+                    FontFamily="Font/#iconfont"
+                    FontSize="20"
+                    Style="{StaticResource FlatButton}"
+                    ToolTip="设置" />
             </Grid>
         </Border>
         <Grid Grid.Row="1" Margin="3">
@@ -52,130 +96,359 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <!-- 接收串口 -->
+            <!--  接收串口  -->
             <Grid Margin="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
-                <RichTextBox Grid.ColumnSpan="2" x:Name="RtbRece" BorderBrush="{StaticResource LineColor}" IsReadOnly="True"
-                         Padding="3" VerticalScrollBarVisibility="Auto" Margin="0">
-                </RichTextBox>
-                <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="0" BorderBrush="{StaticResource LineColor}" BorderThickness="1 0 1 1" Background="White">
+                <RichTextBox
+                    x:Name="RtbRece"
+                    Grid.ColumnSpan="2"
+                    Margin="0"
+                    Padding="3"
+                    BorderBrush="{StaticResource LineColor}"
+                    IsReadOnly="True"
+                    VerticalScrollBarVisibility="Auto" />
+                <Border
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Margin="0"
+                    Background="White"
+                    BorderBrush="{StaticResource LineColor}"
+                    BorderThickness="1,0,1,1">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal" Margin="3 0 3 0">
-                            <CheckBox Height="24" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="0" Content="HEX" VerticalAlignment="Center" Margin="3" IsChecked="{Binding IsShowHex}"></CheckBox>
-                            <Rectangle Width="1" Fill="{StaticResource LineColor}" Margin="3 0 3 0"></Rectangle>
-                            <CheckBox Height="24" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="1" Content="自动换行" VerticalAlignment="Center" Margin="3" IsChecked="{Binding IsNewLine}"></CheckBox>
-                            <CheckBox Height="24" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="0" Content="显示时间" VerticalAlignment="Center" Margin="3" IsChecked="{Binding IsShowTime}"></CheckBox>
-                            <CheckBox Height="24" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="1" x:Name="CkbShowSend" Content="显示发送" VerticalAlignment="Center" Margin="3"></CheckBox>
-                            <Rectangle Width="1" Fill="{StaticResource LineColor}" Margin="3 0 3 0"></Rectangle>
+                        <StackPanel Margin="4,0,4,0" Orientation="Horizontal">
+                            <CheckBox
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Height="24"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Checked="CheckBox_Checked"
+                                Content="HEX"
+                                IsChecked="{Binding IsShowHex}"
+                                Unchecked="CheckBox_Unchecked" />
+                            <Rectangle
+                                Width="1"
+                                Margin="4,0,4,0"
+                                Fill="{StaticResource LineColor}" />
+                            <CheckBox
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Height="24"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Content="自动换行"
+                                IsChecked="{Binding IsNewLine}" />
+                            <CheckBox
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Height="24"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Content="显示时间"
+                                IsChecked="{Binding IsShowTime}" />
+                            <CheckBox
+                                x:Name="CkbShowSend"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Height="24"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Content="显示发送"
+                                IsChecked="{Binding IsShowSend}" />
+                            <Rectangle
+                                Width="1"
+                                Margin="4,0,4,0"
+                                Fill="{StaticResource LineColor}" />
                         </StackPanel>
-                        <StackPanel Grid.Column="1"  Orientation="Horizontal"  HorizontalAlignment="Right" Margin="3">
-                            <Button Grid.Row="2" Grid.Column="0" x:Name="BtnSave" Content="保存屏幕" Margin="3" Width="60"></Button>
-                            <Button Grid.Row="2" Grid.Column="1" x:Name="BtnClear" Content="清除屏幕" Margin="3" Width="60"></Button>
-
+                        <StackPanel
+                            Grid.Column="1"
+                            Margin="3"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                            <Button
+                                x:Name="BtnSave"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Width="24"
+                                Margin="4"
+                                Click="BtnSave_Click"
+                                Content="&#xe8a3;"
+                                FontFamily="Font/#iconfont"
+                                FontSize="20"
+                                Style="{StaticResource FlatButton}"
+                                ToolTip="保存屏幕" />
+                            <Button
+                                x:Name="BtnClear"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Width="24"
+                                Margin="4"
+                                Click="BtnClear_Click"
+                                Content="&#xe900;"
+                                FontFamily="Font/#iconfont"
+                                FontSize="20"
+                                Style="{StaticResource FlatButton}"
+                                ToolTip="清除屏幕" />
                         </StackPanel>
 
                     </Grid>
                 </Border>
             </Grid>
-            <!-- 发送窗口 -->
+            <!--  发送窗口  -->
 
-            <Grid Margin="3" Grid.Row="1">
+            <Grid Grid.Row="1" Margin="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="125" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
-                <TextBox x:Name="TxbSend" Text="Hello, LFLink!" Grid.Row="0" Margin="0" BorderBrush="{StaticResource LineColor}" Padding="3" Height="125"
-                             VerticalContentAlignment="Top" TextWrapping="Wrap"></TextBox>
-                <Border Grid.Row="1" BorderBrush="{StaticResource LineColor}" Margin="0" BorderThickness="1 0 1 1" Background="White">
+                <TextBox
+                    x:Name="TxbSend"
+                    Grid.Row="0"
+                    Height="125"
+                    Margin="0"
+                    Padding="3"
+                    VerticalContentAlignment="Top"
+                    BorderBrush="{StaticResource LineColor}"
+                    Text="Hello, LFLink!"
+                    TextWrapping="Wrap" />
+                <Border
+                    Grid.Row="1"
+                    Margin="0"
+                    Background="White"
+                    BorderBrush="{StaticResource LineColor}"
+                    BorderThickness="1,0,1,1">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal" Margin="3 0 3 0">
-                            <CheckBox Name="CkbSendHex" Content="HEX" VerticalAlignment="Center" Margin="3" IsChecked="{Binding IsSendHex}"></CheckBox>
-                            <Rectangle Width="1" Fill="{StaticResource LineColor}" Margin="3 0 3 0"></Rectangle>
-                            <CheckBox x:Name="CkbAutoSend" Content="自动发送" VerticalAlignment="Center" Margin="3"></CheckBox>
-                            <TextBox Name="txbTimeInterval" Text="100" VerticalAlignment="Center" Width="50" Margin="3"></TextBox>
-                            <TextBlock Text="ms" VerticalAlignment="Center" Margin="3"></TextBlock>
-                            <Rectangle Width="1" Fill="{StaticResource LineColor}" Margin="3 0 3 0"></Rectangle>
+                        <StackPanel Margin="4,0,4,0" Orientation="Horizontal">
+                            <CheckBox
+                                Name="CkbSendHex"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                Checked="CkbSendHex_Checked"
+                                Content="HEX"
+                                IsChecked="{Binding IsSendHex}"
+                                Unchecked="CkbSendHex_Unchecked" />
+                            <Rectangle
+                                Width="1"
+                                Margin="4,0,4,0"
+                                Fill="{StaticResource LineColor}" />
+                            <CheckBox
+                                x:Name="CkbAutoSend"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                Checked="CkbAutoSend_Checked"
+                                Content="自动发送"
+                                Unchecked="CkbAutoSend_Unchecked" />
+                            <TextBox
+                                Name="txbTimeInterval"
+                                Width="50"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                Text="100" />
+                            <TextBlock
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                Text="ms" />
+                            <Rectangle
+                                Width="1"
+                                Margin="4,0,4,0"
+                                Fill="{StaticResource LineColor}" />
                         </StackPanel>
-                        <Button Name="BtnSend" Content="发送" Grid.Column="1" Margin="6" Width="60" HorizontalAlignment="Right"></Button>
-
+                        <Button
+                            Name="BtnSend"
+                            Grid.Column="1"
+                            Width="60"
+                            Margin="6"
+                            HorizontalAlignment="Right"
+                            Click="BtnSend_Click"
+                            Content="发送" />
                     </Grid>
                 </Border>
             </Grid>
         </Grid>
-        <Border Grid.Row="3" Background="White" BorderBrush="{StaticResource LineColor}" BorderThickness="0 1 0 0">
-            <StackPanel Orientation="Horizontal" Margin="3 0 3 0">
-                <TextBlock Text="已发送" VerticalAlignment="Center" Margin="3"></TextBlock>
-                <TextBlock Text="{Binding SendCount}" VerticalAlignment="Center" Margin="0 0 3 0" Foreground="{StaticResource MainColor}"></TextBlock>
-                <TextBlock Text="bits" VerticalAlignment="Center" Margin="3"></TextBlock>
-                <TextBlock Text="已接收" VerticalAlignment="Center" Margin="3"></TextBlock>
-                <TextBlock Text="{Binding ReceiveCount}" VerticalAlignment="Center" Margin="0 0 3 0" Foreground="{StaticResource MainColor}"></TextBlock>
-                <TextBlock Text="bits" VerticalAlignment="Center" Margin="3"></TextBlock>
-                <Rectangle Width="1" Fill="{StaticResource LineColor}" Margin="3 0 3 0"></Rectangle>
-                <TextBlock Text="串口时间" VerticalAlignment="Center" Margin="3"></TextBlock>
-                <TextBlock Text="{Binding Time, StringFormat={}{0:F2}}" VerticalAlignment="Center" Margin="0 0 3 0" Foreground="{StaticResource MainColor}"></TextBlock>
-                <TextBlock Text="s" VerticalAlignment="Center" Margin="3"></TextBlock>
+        <Border
+            Grid.Row="3"
+            Background="White"
+            BorderBrush="{StaticResource LineColor}"
+            BorderThickness="0,1,0,0">
+            <StackPanel Margin="3,0,3,0" Orientation="Horizontal">
+                <TextBlock
+                    Margin="3"
+                    VerticalAlignment="Center"
+                    Text="已发送" />
+                <TextBlock
+                    Margin="0,0,3,0"
+                    VerticalAlignment="Center"
+                    Foreground="{StaticResource MainColor}"
+                    Text="{Binding SendCount}" />
+                <TextBlock
+                    Margin="3"
+                    VerticalAlignment="Center"
+                    Text="bits" />
+                <TextBlock
+                    Margin="3"
+                    VerticalAlignment="Center"
+                    Text="已接收" />
+                <TextBlock
+                    Margin="0,0,3,0"
+                    VerticalAlignment="Center"
+                    Foreground="{StaticResource MainColor}"
+                    Text="{Binding ReceiveCount}" />
+                <TextBlock
+                    Margin="3"
+                    VerticalAlignment="Center"
+                    Text="bits" />
+                <Rectangle
+                    Width="1"
+                    Margin="3,0,3,0"
+                    Fill="{StaticResource LineColor}" />
+                <TextBlock
+                    Margin="3"
+                    VerticalAlignment="Center"
+                    Text="串口时间" />
+                <TextBlock
+                    Margin="0,0,3,0"
+                    VerticalAlignment="Center"
+                    Foreground="{StaticResource MainColor}"
+                    Text="{Binding Time, StringFormat={}{0:F2}}" />
+                <TextBlock
+                    Margin="3"
+                    VerticalAlignment="Center"
+                    Text="s" />
             </StackPanel>
         </Border>
-        <!--抽屉侧滑栏-->
-        <Border x:Name="RightMenu" Grid.Row="0" Grid.RowSpan="3" Height="Auto" Margin="0" Background="white" Width="200" HorizontalAlignment="Right" BorderThickness="1" BorderBrush="{StaticResource LineColor}">
+        <!--  抽屉侧滑栏  -->
+        <Border
+            x:Name="RightMenu"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            Width="200"
+            Height="Auto"
+            Margin="0"
+            HorizontalAlignment="Right"
+            Background="{StaticResource BackColor}"
+            BorderBrush="{StaticResource LineColor}"
+            BorderThickness="1,1,0,0"
+            CornerRadius="10 0 0 0">
             <Border.Effect>
-                <DropShadowEffect Color="Gray" ShadowDepth="0" BlurRadius="6" Opacity="0.3" Direction="0"/>
+                <DropShadowEffect
+                    BlurRadius="6"
+                    Direction="180"
+                    Opacity="0.3"
+                    ShadowDepth="1"
+                    Color="Gray" />
             </Border.Effect>
             <Border.RenderTransform>
-                <TranslateTransform X="206" x:Name="tt"></TranslateTransform>
+                <TranslateTransform x:Name="tt" X="206" />
             </Border.RenderTransform>
             <Grid Margin="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
-                <Button Name="BtnCloseMenu" Style="{StaticResource SingleButton}" Margin="3" Content="关闭" HorizontalAlignment="Right" Width="60"></Button>
+                <Button
+                    Name="BtnCloseMenu"
+                    Width="24"
+                    Margin="3"
+                    HorizontalAlignment="Left"
+                    Content="&#xe86c;"
+                    FontFamily="Font/#iconfont"
+                    FontSize="20"
+                    Style="{StaticResource FlatButton}" />
                 <StackPanel Grid.Row="1">
-                    <GroupBox Header="串口配置" Margin="3" VerticalAlignment="Top">
-                        <Grid>
+                    <GroupBox
+                        Margin="3"
+                        VerticalAlignment="Top"
+                        Background="White"
+                        Header="串口配置">
+                        <Grid Margin="3">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
                             </Grid.RowDefinitions>
-                            <TextBlock Text="数据位" Grid.Row="2" VerticalAlignment="Center" Margin="3"></TextBlock>
-                            <TextBlock Text="停止位" Grid.Row="3" VerticalAlignment="Center" Margin="3"></TextBlock>
-                            <TextBlock Text="校验位" Grid.Row="4" VerticalAlignment="Center" Margin="3"></TextBlock>
-                            <ComboBox Grid.Row="2" Grid.Column="1" Name="CmbDatabits" IsEditable="True" Margin="3" SelectedIndex="{Binding Databits}">
-                                <ComboBoxItem Content="8"/>
-                                <ComboBoxItem Content="7"/>
-                                <ComboBoxItem Content="6"/>
-                                <ComboBoxItem Content="5"/>
+                            <TextBlock
+                                Grid.Row="2"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                Text="数据位" />
+                            <TextBlock
+                                Grid.Row="3"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                Text="停止位" />
+                            <TextBlock
+                                Grid.Row="4"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                Text="校验位" />
+                            <ComboBox
+                                Name="CmbDatabits"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="3"
+                                IsEditable="True"
+                                SelectedIndex="0"
+                                SelectionChanged="CmbDatabits_SelectionChanged">
+                                <ComboBoxItem Content="8" />
+                                <ComboBoxItem Content="7" />
+                                <ComboBoxItem Content="6" />
+                                <ComboBoxItem Content="5" />
                             </ComboBox>
-                            <ComboBox Grid.Row="3" Grid.Column="1" Name="CmbStopbits" IsEditable="True" Margin="3" SelectedIndex="{Binding Stopbits}" >
-                                <ComboBoxItem Content="1"/>
-                                <ComboBoxItem Content="1.5"/>
-                                <ComboBoxItem Content="2"/>
+                            <ComboBox
+                                Name="CmbStopbits"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Margin="3"
+                                IsEditable="True"
+                                SelectedIndex="0"
+                                SelectionChanged="CmbStopbits_SelectionChanged">
+                                <ComboBoxItem Content="1" />
+                                <ComboBoxItem Content="1.5" />
+                                <ComboBoxItem Content="2" />
                             </ComboBox>
-                            <ComboBox Grid.Row="4" Grid.Column="1" Name="CmbParity" IsEditable="True" Margin="3" SelectedIndex="{Binding Parity}">
-                                <ComboBoxItem Content="无"/>
-                                <ComboBoxItem Content="奇校验"/>
-                                <ComboBoxItem Content="偶校验"/>
+                            <ComboBox
+                                Name="CmbParity"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Margin="3"
+                                IsEditable="True"
+                                SelectedIndex="0"
+                                SelectionChanged="CmbParity_SelectionChanged">
+                                <ComboBoxItem Content="无" />
+                                <ComboBoxItem Content="奇校验" />
+                                <ComboBoxItem Content="偶校验" />
                             </ComboBox>
-                            <Button Grid.Row="5" Grid.ColumnSpan="2" x:Name="BtnRefresh" Content="刷新串口" VerticalAlignment="Center" Margin="3" Style="{StaticResource SingleButton}"></Button>
+                            <Button
+                                x:Name="BtnRefresh"
+                                Grid.Row="5"
+                                Grid.ColumnSpan="2"
+                                Margin="3"
+                                VerticalAlignment="Center"
+                                Click="BtnRefresh_Click"
+                                Content="刷新串口"
+                                Style="{StaticResource SingleButton}" />
 
                         </Grid>
 

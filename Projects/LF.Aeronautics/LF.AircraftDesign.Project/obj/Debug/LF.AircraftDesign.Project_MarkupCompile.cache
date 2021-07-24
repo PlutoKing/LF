@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-I:\LF.Lab\Projects\LF.Aeronautics\LF.AircraftDesign.Project\obj\Debug\
+i:\LF.Lab\Projects\LF.Aeronautics\LF.AircraftDesign.Project\obj\Debug\
 LF.AircraftDesign.Project
 none
 false
 DEBUG;TRACE
-I:\LF.Lab\Projects\LF.Aeronautics\LF.AircraftDesign.Project\App.xaml
-5-1240826441
+i:\LF.Lab\Projects\LF.Aeronautics\LF.AircraftDesign.Project\App.xaml
+5-413351812
 
-13-1548768511
-17-1062665214
+141530818207
+17-1144736436
 MainWindow.xaml;View\Window\FuelFractionInCruiseWindow.xaml;View\Page\SizingPage.xaml;View\Window\AtmosphereToolWindow.xaml;View\Dialog\CreateProjectDialog.xaml;
 
-False
+True
 

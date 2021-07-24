@@ -12,192 +12,207 @@ using System.ComponentModel;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
-using System.Xml;
 
 namespace LF.SerialCommunication.Project.ViewModel
 {
+    /// <summary>
+    /// 主窗口模型
+    /// </summary>
     public class MainWindowModel:LFNotify
     {
         #region Fields
+        /// <summary>
+        /// 接收数据事件
+        /// </summary>
+        /// <param name="data">数据</param>
+        /// <param name="count">位数</param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public delegate void ReceiveDataHandler(string data, int count, object sender, SerialDataReceivedEventArgs e);
+        public ReceiveDataHandler OnReceiveData;
 
-        private SerialPort _port;           // 串口
-
+        private SerialPort _port;   // 串口
         private List<string> _portNames;    // 所有可用串口名称
+        private double _time;       // 串口时间
 
-        private int _receiveCount;          // 接受数据计数
 
-        private int _sendCount;             // 发送数据计数
+        private int _receiveCount;  // 接收量
+        private int _sendCount;     // 发送量
 
-        private string _name;
+        private ObservableCollection<LFMessage> _messages = new ObservableCollection<LFMessage>();  // 接收消息
+        private string _sendContent;        // 发送内容
 
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; Notify(); }
-        }
-
-        private int _baudrate = 9600;
-
-        public int Baudrate
-        {
-            get { return _baudrate; }
-            set { _baudrate = value; Notify(); }
-        }
-
-        private int _databits = 0;
-
-        public int Databits
-        {
-            get { return _databits; }
-            set { _databits = value; Notify(); }
-        }
-
-        private int _stopbits = 0;
-
-        public int Stopbits
-        {
-            get { return _stopbits; }
-            set { _stopbits = value; Notify(); }
-        }
-
-        private int _parity = 0;
-
-        public int Parity
-        {
-            get { return _parity; }
-            set { _parity = value; Notify(); }
-        }
-
+        private bool _isShowTime = true;    // 是否显示时间
+        private bool _isSendHex = true;     // 是否以16进制发送
+        private bool _isNewLine = true;     // 是否自动换行
+        private bool _isShowSend = true;    // 是否显示发送消息
+        private bool _isShowHex = true;     // 是否以16进制显示
+        /// <summary>
+        /// 字符串构造器
+        /// </summary>
+        private StringBuilder builder = new StringBuilder();
         #endregion
 
         #region Properties
         /// <summary>
-        /// 串口
+        /// 串口名称
         /// </summary>
-        public SerialPort Port
+        public string PortName
         {
-            get { return _port; }
-            set { _port = value; Notify(); }
+            get { return _port.PortName; }
+            set { _port.PortName = value;  Notify(); }
         }
 
         /// <summary>
-        /// 所有可用串口名称
+        /// 波特率
         /// </summary>
-        public List<string> PortNames
+        public int Baudrate
         {
-            get { return _portNames; }
-            set { _portNames = value; Notify(); }
+            get { return _port.BaudRate; }
+            set { _port.BaudRate = value; Notify(); }
         }
 
         /// <summary>
-        /// 接收数据计数
+        /// 数据位
+        /// </summary>
+        public int DataBits
+        {
+            get { return _port.DataBits; }
+            set { _port.DataBits = value; Notify(); }
+        }
+
+        /// <summary>
+        /// 校验位
+        /// </summary>
+        public Parity Parity
+        {
+            get { return _port.Parity; }
+            set { _port.Parity = value; Notify(); }
+        }
+
+        /// <summary>
+        /// 停止位
+        /// </summary>
+        public StopBits StopBits
+        {
+            get { return _port.StopBits; }
+            set { _port.StopBits = value; Notify(); }
+        }
+
+
+        /// <summary>
+        /// 是否打开
+        /// </summary>
+        public bool IsOpen
+        {
+            get { return _port.IsOpen; }
+        }
+
+        /// <summary>
+        /// 是否为空
+        /// </summary>
+        public bool IsNull
+        {
+            get
+            {
+                return _port == null || _port.PortName == null || _port.PortName == "";
+            }
+        }
+
+        /// <summary>
+        /// 接收数据量
         /// </summary>
         public int ReceiveCount
         {
-            get { return _receiveCount; }
-            set { _receiveCount = value; Notify(); }
+            get => _receiveCount;
+            set
+            {
+                _receiveCount = value;
+                Notify();
+            }
         }
 
         /// <summary>
-        /// 发送数据计数
+        /// 发送数据量
         /// </summary>
         public int SendCount
         {
-            get { return _sendCount; }
-            set { _sendCount = value; Notify(); }
+            get => _sendCount;
+            set
+            {
+                _sendCount = value;
+                Notify();
+            }
         }
-        #region Commands
-        public LFCommand OpenOrCloseSerialPortCmd { get; set; }
-        #endregion
+        /// <summary>
+        /// 所以可用串口名称
+        /// </summary>
+        public List<string> PortNames { get => _portNames; set => _portNames = value; }
+        public bool IsShowTime { get => _isShowTime; set => _isShowTime = value; }
+        public bool IsSendHex { get => _isSendHex; set => _isSendHex = value; }
+        public string SendContent { get => _sendContent; set => _sendContent = value; }
+        public bool IsNewLine { get => _isNewLine; set => _isNewLine = value; }
+        public bool IsShowHex { get => _isShowHex; set => _isShowHex = value; }
+        public bool IsShowSend { get => _isShowSend; set => _isShowSend = value; }
+        public ObservableCollection<LFMessage> Messages { get => _messages; set => _messages = value; }
+        public double Time
+        {
+            get => _time; set
+            {
+                _time = value;
+                Notify();
+            }
+        }
+
+
         #endregion
 
         #region Constructors
         public MainWindowModel()
         {
-            /* 打开串口 */
-            OpenOrCloseSerialPortCmd = new LFCommand()
-            {
-                DoExecute = new Action<object>((sender) =>
-                {
-                    OpenOrCloseSerialPort();
-                }),
-                DoCanExecute = new Func<object, bool>((sender) => { return true; })
-            };
+            _port = new SerialPort();
+            _port.DataReceived += Port_DataReceived;
         }
+
+
         #endregion
 
         #region Methods
 
+        #region Commom Methods
+
         /// <summary>
         /// 扫描串口
         /// </summary>
-        public void ScanSerialPorts()
+        public void Scan()
         {
             string[] portNames = SerialPort.GetPortNames();
             _portNames = portNames.ToList();
         }
 
         /// <summary>
-        /// 串口配制
+        /// 打开串口
         /// </summary>
-        public void SerialPortConfig()
+        public void Open()
         {
-            Port = new SerialPort();
-            Port.PortName = Name;
-            Port.BaudRate = Baudrate;
-            Port.DataBits = 8 - Databits;
-            switch (Stopbits)
-            {
-                case 0:
-                    Port.StopBits = StopBits.One;
-                    break;
-                case 1:
-                    Port.StopBits = StopBits.OnePointFive;
-                    break;
-                case 2:
-                    Port.StopBits = StopBits.Two;
-                    break;
-                default:
-                    Port.StopBits = StopBits.One;
-                    break;
-            }
+            _port.Open();
 
-            switch (Parity)
-            {
-                case 0:
-                    Port.Parity = System.IO.Ports.Parity.None;
-                    break;
-                case 1:
-                    Port.Parity = System.IO.Ports.Parity.Odd;
-                    break;
-                case 2:
-                    Port.Parity = System.IO.Ports.Parity.Even;
-                    break;
-                default:
-                    Port.Parity = System.IO.Ports.Parity.None;
-                    break;
-            }
+            // 计数器清零
+            _receiveCount = 0;
+            _sendCount = 0;
+
         }
-        
+
         /// <summary>
-        /// 打开或关闭串口
+        /// 关闭串口
         /// </summary>
-        public void OpenOrCloseSerialPort()
+        public void Close()
         {
-
-            if (_port.IsOpen)
-            {
-                _port.Close();
-                // 计数清零
-                ReceiveCount = 0;
-                SendCount = 0;
-            }
-            else
-            {
-                _port.Open();
-            }
+            _port.Close();
         }
+        #endregion
 
+        #region Send and Receive Methods
         /// <summary>
         /// 发送数据
         /// </summary>
@@ -225,5 +240,58 @@ namespace LF.SerialCommunication.Project.ViewModel
             }
         }
         #endregion
+
+        #endregion
+
+        #region Events
+
+        /// <summary>
+        /// 接收数据时发生
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+
+            if (OnReceiveData != null)
+            {
+                byte[] readBuffer = new byte[_port.ReadBufferSize + 1];
+                int count = _port.Read(readBuffer, 0, _port.ReadBufferSize);
+
+                if (count != 0)
+                {
+                    LFMessage msg = new LFMessage
+                    {
+                        Time = DateTime.Now,    // 当前时间
+                        Buffer = readBuffer,    // 数据缓冲
+                        Count = count
+                    };
+                    _messages.Add(msg);         // 添加消息
+
+                    string data;
+                    // 16进制显示
+                    if (IsShowHex)
+                    {
+                        builder.Clear();
+                        for (int i = 0; i < count; i++)
+                        {
+                            builder.Append(readBuffer[i].ToString("X2") + " ");
+                        }
+                        data = builder.ToString();
+                    }
+                    // 字符串显示
+                    else
+                    {
+                        data = Encoding.ASCII.GetString(readBuffer, 0, count);
+                    }
+                    // 外部接收数据时间
+                    OnReceiveData(data, count, sender, e);
+                }
+
+
+            }
+        }
+        #endregion
+
     }
 }

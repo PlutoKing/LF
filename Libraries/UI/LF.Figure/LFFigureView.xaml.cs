@@ -29,18 +29,26 @@ namespace LF.Figure
     public partial class LFFigureView : UserControl
     {
         #region Fields
-
-
-        public string Title
+        public LFLabel Title
         {
-            get { return (string)GetValue(TitleProperty); }
+            get { return (LFLabel)GetValue(TitleProperty); }
             set { SetValue(TitleProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
+        // Using a DependencyProperty as the backing store for lFLabel.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TitleProperty =
-            DependencyProperty.Register("Title", typeof(string), typeof(LFFigureView), new PropertyMetadata(default(string),OnPropertyChanged));
+            DependencyProperty.Register("Title", typeof(LFLabel), typeof(LFFigureView), new PropertyMetadata(default(LFLabel),OnPropertyChanged));
 
+
+        public LFChart Chart
+        {
+            get { return (LFChart)GetValue(ChartProperty); }
+            set { SetValue(ChartProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Chart.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ChartProperty =
+            DependencyProperty.Register("Chart", typeof(LFChart), typeof(LFFigureView), new PropertyMetadata(default(LFChart), OnPropertyChanged));
 
 
         #endregion
@@ -50,30 +58,45 @@ namespace LF.Figure
         {
             InitializeComponent();
 
-            SetCurrentValue(TitleProperty, "Title");
+
+            SetCurrentValue(TitleProperty, new LFLabel());
+
+            SetCurrentValue(ChartProperty, new LFChart());
+
 
             SizeChanged += LFFigureView_SizeChanged;
         }
 
-        
+
+
+
         #endregion
 
         #region Methods
+
+        /// <summary>
+        /// 绘制图表
+        /// </summary>
         public void Draw()
         {
             root.Children.Clear();
 
             double w = root.RenderSize.Width;
-            TextBlock text = new TextBlock();
-            text.HorizontalAlignment = HorizontalAlignment.Center;
-            text.Text = Title;
-            root.Children.Add(text);
+            double h = root.RenderSize.Height;
 
-            Size tmp = LFText.MeasureString(text);
-            Canvas.SetLeft(text, (w - tmp.Width) / 2.0);
+            root.Children.Add(Title);
+            Canvas.SetLeft(Title, w / 2);
+            Canvas.SetTop(Title, 0);
+
+            if(Chart != null)
+            {
+                root.Children.Add(Chart);
+                Canvas.SetLeft(Chart, (w-Chart.Width)/2);
+                Canvas.SetTop(Chart, (h - Chart.Height) / 2);
+            }
+
         }
 
-        
         #endregion
 
         #region Events

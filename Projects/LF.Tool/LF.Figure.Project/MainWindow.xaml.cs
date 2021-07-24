@@ -5,6 +5,7 @@
  * Description  : 
  * ──────────────────────────────────────────────────────────────*/
 
+using LF.Figure.Project.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,8 @@ namespace LF.Figure.Project
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MainWindowModel();
         }
         #endregion
 

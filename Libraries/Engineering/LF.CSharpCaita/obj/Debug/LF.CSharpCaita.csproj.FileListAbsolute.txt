@@ -1,0 +1,12 @@
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\bin\Debug\LF.CSharpCaita.dll
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\bin\Debug\LF.CSharpCaita.pdb
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\LF.CSharpCaita.csprojAssemblyReference.cache
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\Interop.HybridShapeTypeLib.dll
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\Interop.INFITF.dll
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\Interop.KnowledgewareTypeLib.dll
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\Interop.MECMOD.dll
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\Interop.ProductStructureTypeLib.dll
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\LF.CSharpCaita.csproj.ResolveComReference.cache
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\LF.CSharpCaita.csproj.CoreCompileInputs.cache
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\LF.CSharpCaita.dll
+I:\LF.Lab\Libraries\Engineering\LF.CSharpCaita\obj\Debug\LF.CSharpCaita.pdb

@@ -1,0 +1,171 @@
+﻿<Window
+    x:Class="LF.Tetris.Project.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:LF.Tetris.Project"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="window"
+    Title="俄罗斯方块"
+    Width="462"
+    Height="660"
+    Background="{StaticResource BackColor}"
+    KeyDown="Window_KeyDown"
+    ResizeMode="NoResize"
+    UseLayoutRounding="True"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Margin="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Border
+                Margin="3"
+                Background="White"
+                BorderBrush="{StaticResource LineColor}"
+                BorderThickness="1">
+                <Grid
+                    x:Name="Grid1"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="1"
+                    Width="300"
+                    Height="600"
+                    Margin="6"
+                    Background="{StaticResource BackColor}"
+                    IsHitTestVisible="False"
+                    ShowGridLines="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+            </Border>
+            <Border
+                Grid.Column="1"
+                Margin="3"
+                Background="White"
+                BorderBrush="{StaticResource LineColor}"
+                BorderThickness="1">
+                <StackPanel Margin="3">
+                    <TextBlock Margin="3" Text="得分" />
+                    <TextBlock
+                        Margin="3"
+                        HorizontalAlignment="Right"
+                        FontFamily="Consolas"
+                        FontSize="18"
+                        Foreground="{StaticResource MainColor}"
+                        Text="{Binding Path=Score}" />
+                    <TextBlock Margin="3" Text="等级" />
+                    <TextBlock
+                        Margin="3"
+                        HorizontalAlignment="Right"
+                        FontFamily="Consolas"
+                        FontSize="18"
+                        Foreground="{StaticResource MainColor}"
+                        Text="{Binding Path=Level}" />
+                    <TextBlock Margin="3" Text="下一个" />
+                    <Grid
+                        Name="grid3"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Width="100"
+                        Height="100"
+                        Margin="3"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="{StaticResource BackColor}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition Width="25" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <Button
+                        Name="button1"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Width="100"
+                        Height="23"
+                        Margin="3"
+                        Click="button1_Click"
+                        ClickMode="Release"
+                        Content="开始新游戏"
+                        Focusable="False" />
+
+                    <Button
+                        Name="button2"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Width="100"
+                        Height="23"
+                        Margin="3"
+                        Click="button2_Click"
+                        Content="暂停"
+                        Focusable="False" />
+                    <Button
+                        Name="button3"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Width="100"
+                        Height="23"
+                        Margin="3"
+                        Click="button3_Click"
+                        Content="结束游戏"
+                        Focusable="False" />
+
+                </StackPanel>
+
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
